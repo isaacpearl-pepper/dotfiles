@@ -71,6 +71,8 @@ function zvm_after_select_vi_mode() {
     #PROMPT='%F{$VICOLORS}$VIMODE %f'
 }
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -93,14 +95,14 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-autoload -U +X bashcompinit && bashcompinit
+autoload -U +X bashcompinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$HOME/bin/terraform:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $ZSH/oh-my-zsh.sh
+complete -o nospace -C /opt/homebrew/Cellar/tfenv/2.2.3/versions/1.2.1/terraform terraform
