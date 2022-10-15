@@ -7,6 +7,8 @@ alias "vim"="nvim"
 # Terminal colors (for tmux)
 export TERM="screen-256color"
 
+export EDITOR=nvim
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ipearl/.oh-my-zsh"
 
@@ -68,7 +70,6 @@ function zvm_after_select_vi_mode() {
     ZSH_THEME_SVN_PROMPT_CLEAN=" "
     #PROMPT='%F{$VICOLORS}$VIMODE %f'
 }
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -76,13 +77,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nvim'
-# else
-#   export EDITOR='nvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,3 +102,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$HOME/bin/terraform:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source $ZSH/oh-my-zsh.sh
