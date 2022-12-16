@@ -20,6 +20,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'wesQ3/vim-windowswap'
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 " Options
@@ -50,14 +51,21 @@ set tabstop=4
 set expandtab
 set autoindent
 set number
+"set cc=120
 syntax on
 "colo desert
 
-:autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+set completeopt-=preview
+nmap <silent> K <plug>(YCMHover)
 
 set rtp+=/opt/homebrew/opt/fzf
 nmap <C-p> :FZF<CR>
 map <C-b> :Buffers<CR>
+
+
+"ack settings
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "NERDTree settings
 map <C-n> :NERDTreeToggle<CR>
@@ -80,7 +88,8 @@ function! <SID>SynStack()
 endfunc
 
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_a = '%{airline#extensions#whitespace#check()}'
 
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '

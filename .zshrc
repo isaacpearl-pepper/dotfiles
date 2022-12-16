@@ -44,11 +44,11 @@ function zvm_after_select_vi_mode() {
             VICOLORS="green"
             ;;
         $ZVM_MODE_VISUAL)
-            VIMODE="濾"
+            VIMODE="濾"
             VICOLORS="red"
             ;;
         $ZVM_MODE_VISUAL_LINE)
-            VIMODE="礪"
+            VIMODE="礪"
             VICOLORS="red"
             ;;
     esac
