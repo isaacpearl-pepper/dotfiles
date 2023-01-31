@@ -21,6 +21,8 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mileszs/ack.vim'
+Plug 'github/copilot.vim'
+Plug 'glacambre/firenvim'
 call plug#end()
 
 " Options
