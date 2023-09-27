@@ -19,7 +19,7 @@ Plug 'dense-analysis/ale'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'wesQ3/vim-windowswap'
 Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'mileszs/ack.vim'
 Plug 'github/copilot.vim'
 Plug 'glacambre/firenvim'
@@ -53,6 +53,12 @@ set tabstop=4
 set expandtab
 set autoindent
 set number
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
+
 "set cc=120
 syntax on
 "colo desert
@@ -221,4 +227,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
+let g:sql_type_default = 'pqsql'
 let g:gotests_bin = '/Users/ipearl/go/bin/gotests'
+

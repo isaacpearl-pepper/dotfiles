@@ -37,8 +37,8 @@
 " OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 " WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-highlight clear
-set background=dark
+"highlight clear
+"set background=dark
 
 if exists("syntax_on")
     syntax reset
@@ -57,7 +57,7 @@ hi CursorLine                ctermfg=NONE          ctermbg=NONE      cterm=NONE 
 "hi CursorLine                ctermfg=NONE          ctermbg=236      cterm=NONE       guifg=NONE     guibg=#2f2f2f  gui=NONE
 
 "-------------------------
-"- Varible Types         -
+"- Variable Types         -
 "-------------------------
 hi Constant                  ctermfg=135           ctermbg=NONE     cterm=bold       guifg=#AF5FFF  guibg=NONE     gui=NONE
 hi String                    ctermfg=220           ctermbg=NONE     cterm=NONE       guifg=#f1c40f  guibg=NONE     gui=NONE
@@ -111,7 +111,7 @@ hi IncSearch                 ctermfg=16            ctermbg=39       cterm=bold  
 hi Directory                 ctermfg=118           ctermbg=NONE     cterm=bold       guifg=NONE     guibg=NONE     term=NONE     gui=NONE
 
 "---------------------------
-"- Promopt/Status          -
+"- Prompt/Status          -
 "---------------------------
 hi StatusLine                ctermfg=238           ctermbg=253      cterm=NONE       guifg=#444444  guibg=#DADADA  gui=NONE
 hi StatusLineNC              ctermfg=244           ctermbg=232      cterm=NONE       guifg=#808080  guibg=#080808  gui=NONE
