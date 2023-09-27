@@ -49,10 +49,10 @@ let colors_name = "lanox_custom"
 "-------------------------
 "- Editor Settings       -
 "-------------------------
-hi Normal                    ctermfg=252           ctermbg=000      cterm=NONE       guifg=#D0D0D0  guibg=#000000  gui=NONE
-hi Cursor                    ctermfg=16            ctermbg=253      cterm=NONE       guifg=#000000  guibg=#DADADA  gui=NONE
-"hi LineNr                    ctermfg=236           ctermbg=233      cterm=NONE       guifg=#838586  guibg=#2f2f2f  gui=NONE
-hi LineNr                    ctermfg=236           ctermbg=NONE      cterm=NONE       guifg=#838586  guibg=NONE  gui=NONE
+hi Normal                    ctermfg=NONE          ctermbg=NONE      cterm=NONE       guifg=#D0D0D0  guibg=NONE  gui=NONE
+"hi Normal                    ctermfg=252           ctermbg=000      cterm=NONE       guifg=#D0D0D0  guibg=#000000  gui=NONE
+hi Cursor                    ctermfg=16            ctermbg=NONE      cterm=NONE       guifg=#000000  guibg=#DADADA  gui=NONE
+hi LineNr                    ctermfg=236           ctermbg=233      cterm=NONE       guifg=#838586  guibg=#2f2f2f  gui=NONE
 hi CursorLine                ctermfg=NONE          ctermbg=NONE      cterm=NONE       guifg=NONE     guibg=NONE  gui=NONE
 "hi CursorLine                ctermfg=NONE          ctermbg=236      cterm=NONE       guifg=NONE     guibg=#2f2f2f  gui=NONE
 
@@ -164,7 +164,8 @@ hi Macro                     ctermfg=193           ctermbg=NONE     cterm=NONE  
 "---------------------------
 "- NERDTREE  			   -
 "---------------------------
-hi NERDTReeUp                ctermfg=27            ctermbg=232      cterm=bold       guifg=#005fff  guibg=#080808  gui=NONE
+hi NERDTReeUp                ctermfg=27            ctermbg=NONE      cterm=bold       guifg=#005fff  guibg=#080808  gui=NONE
+"hi NERDTReeUp                ctermfg=27            ctermbg=232      cterm=bold       guifg=#005fff  guibg=#080808  gui=NONE
 hi NERDTreeFile              ctermfg=15            ctermbg=NONE     cterm=NONE       guifg=#ffffff  guibg=NONE     gui=NONE
 hi NERDTreeCWD               ctermfg=220           ctermbg=NONE     cterm=NONE       guifg=#FFD700  guibg=NONE     gui=NONE
 hi NERDTreeDir               ctermfg=246           ctermbg=NONE     cterm=NONE       guifg=#949494  guibg=NONE     gui=NONE
