@@ -10,6 +10,7 @@ alias "gco"="git checkout"
 alias "gcm"="git checkout main"
 alias "gcb"="git checkout -b"
 alias "gb"="git branch"
+alias "gm"="git merge"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
