@@ -7,7 +7,7 @@ export TERM="screen-256color"
 export EDITOR=nvim
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ipearl/.oh-my-zsh"
+export ZSH="/Users/isaacpearl/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,4 +120,3 @@ alias "gcm"="git checkout main"
 alias "gcb"="git checkout -b"
 alias "gco"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
 alias "gb"="git branch"
-alias "gm"="git merge"
