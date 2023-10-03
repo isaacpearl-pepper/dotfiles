@@ -8,7 +8,7 @@ alias "gp"="git push"
 alias "gpl"="git pull"
 alias "gcm"="git checkout main"
 alias "gcb"="git checkout -b"
-alias "gco"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
+alias "gcz"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
 alias "gb"="git branch"
 alias "gm"="git merge"
 
