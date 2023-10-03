@@ -1,17 +1,3 @@
-alias c="clear"
-alias "vim"="nvim"
-alias "gs"="git status"
-alias "ga"="git add"
-alias "gaa"="git add ."
-alias "gc"="git commit"
-alias "gp"="git push"
-alias "gpl"="git pull"
-alias "gcm"="git checkout main"
-alias "gcb"="git checkout -b"
-alias "gcz"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
-alias "gb"="git branch"
-alias "gm"="git merge"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -118,3 +104,20 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 complete -o nospace -C /opt/homebrew/Cellar/tfenv/2.2.3/versions/1.2.1/terraform terraform
+
+# Aliases
+alias c="clear"
+alias rm="rm -i"
+alias "ls"="ls -alhG"
+alias "vim"="nvim"
+alias "gs"="git status"
+alias "ga"="git add"
+alias "gaa"="git add ."
+alias "gc"="git commit"
+alias "gp"="git push"
+alias "gpl"="git pull"
+alias "gcm"="git checkout main"
+alias "gcb"="git checkout -b"
+alias "gcz"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
+alias "gb"="git branch"
+alias "gm"="git merge"
