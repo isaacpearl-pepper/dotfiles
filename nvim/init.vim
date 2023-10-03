@@ -17,9 +17,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dense-analysis/ale'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'wesQ3/vim-windowswap'
 Plug 'junegunn/fzf.vim'
-"Plug 'ycm-core/YouCompleteMe'
 Plug 'mileszs/ack.vim'
 Plug 'github/copilot.vim'
 Plug 'glacambre/firenvim'
@@ -54,6 +52,8 @@ set tabstop=4
 set expandtab
 set autoindent
 set number
+filetype plugin on
+
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
@@ -71,7 +71,7 @@ nmap <silent> K <plug>(YCMHover)
 set rtp+=/opt/homebrew/opt/fzf
 nmap <C-p> :FZF<CR>
 map <C-b> :Buffers<CR>
-
+map <C-k> :Ack<CR>
 
 "ack settings
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -231,3 +231,22 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let g:sql_type_default = 'pqsql'
 let g:gotests_bin = '/Users/ipearl/go/bin/gotests'
 
+" Nerdcommenter settings:
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
