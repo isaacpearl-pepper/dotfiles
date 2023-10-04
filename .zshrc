@@ -15,7 +15,6 @@ export ZSH="/Users/isaacpearl/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="awesomepanda"
 
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -25,6 +24,7 @@ plugins=(
     git
     macos
     terraform
+    svn
     aws
     zsh-vi-mode
 )
@@ -68,6 +68,7 @@ function zvm_after_select_vi_mode() {
     #PROMPT='%F{$VICOLORS}$VIMODE %f'
 }
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
