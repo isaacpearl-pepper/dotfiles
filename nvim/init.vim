@@ -1,3 +1,4 @@
+" Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go'
