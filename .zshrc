@@ -107,7 +107,7 @@ complete -o nospace -C /opt/homebrew/Cellar/tfenv/2.2.3/versions/1.2.1/terraform
 # Aliases
 alias c="clear"
 alias rm="rm -i"
-alias "ls"="ls -alhG"
+alias "ls"="ls -aG"
 alias "vim"="nvim"
 alias "gs"="git status"
 alias "ga"="git add"
@@ -120,3 +120,4 @@ alias "gcb"="git checkout -b"
 alias "gco"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/heads/ | fzf)"
 alias "gb"="git branch"
 alias "gm"="git merge"
+alias "gmm"="git merge main"
