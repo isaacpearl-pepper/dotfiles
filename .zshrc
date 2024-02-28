@@ -122,3 +122,4 @@ alias "gca"="git checkout \$(git for-each-ref --format='%(refname:short)' refs/h
 alias "gb"="git branch"
 alias "gm"="git merge"
 alias "gmm"="git merge main"
+alias "ghpr"="gh pr create --web"
