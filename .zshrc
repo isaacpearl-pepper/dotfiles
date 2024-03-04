@@ -109,7 +109,6 @@ complete -o nospace -C /opt/homebrew/Cellar/tfenv/2.2.3/versions/1.2.1/terraform
 # Aliases
 alias c="clear"
 alias rm="rm -i"
-alias "ls"="ls -alhG"
 alias "vim"="nvim"
 alias "gs"="git status"
 alias "ga"="git add"

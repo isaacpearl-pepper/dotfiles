@@ -68,7 +68,7 @@ autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
 set completeopt-=preview
 nmap <silent> K <plug>(YCMHover)
 
-set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/usr/local/opt/fzf
 nmap <C-p> :FZF<CR>
 map <C-b> :Buffers<CR>
 map <C-k> :Ack<CR>
