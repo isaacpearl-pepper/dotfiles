@@ -126,7 +126,9 @@ hi MoreMsg                   ctermfg=229           ctermbg=NONE     cterm=NONE  
 "---------------------------
 hi MatchParen                ctermfg=9            ctermbg=232      cterm=bold       guifg=#ff0000  guibg=NONE  gui=NONE
 "hi MatchParen                ctermfg=16            ctermbg=208      cterm=bold       guifg=#000000  guibg=#FF8700  gui=NONE
-hi Visual                    ctermfg=NONE          ctermbg=236      cterm=NONE       guifg=#262626  guibg=NONE     gui=NONE
+hi Visual                    ctermfg=NONE          ctermbg=255      cterm=NONE       guifg=NONE  guibg=#585858     gui=NONE
+" hi Visual                    ctermfg=NONE          ctermbg=236      cterm=NONE       guifg=#262626  guibg=NONE     gui=NONE
+
 hi VisualNOS                 ctermfg=238           ctermbg=NONE     cterm=NONE       guifg=#444444  guibg=NONE     gui=NONE
 hi NonText                   ctermfg=240           ctermbg=233      cterm=NONE       guifg=#585858  guibg=#121212  gui=NONE
 hi Todo                      ctermfg=231           ctermbg=232      cterm=underline  guifg=#FFFFFF  guibg=#080808  gui=NONE

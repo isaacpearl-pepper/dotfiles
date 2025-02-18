@@ -10,7 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'alvan/vim-closetag'
-Plug 'ap/vim-css-color'
+"Plug 'ap/vim-css-color'
 Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier'
 Plug 'christoomey/vim-tmux-navigator'
@@ -228,6 +228,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+let g:coc_global_extensions = ['coc-tsserver']
 
 let g:sql_type_default = 'pqsql'
 let g:gotests_bin = '/Users/ipearl/go/bin/gotests'

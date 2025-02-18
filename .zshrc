@@ -123,3 +123,5 @@ alias "gb"="git branch"
 alias "gm"="git merge"
 alias "gmm"="git merge main"
 alias "ghpr"="gh pr create --web"
+
+. "$HOME/.local/bin/env"
