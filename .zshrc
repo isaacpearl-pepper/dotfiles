@@ -7,13 +7,13 @@ export TERM="screen-256color"
 export EDITOR=nvim
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ipearl/.oh-my-zsh"
+export ZSH="/Users/isaacpearl/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="awesomepanda"
+ZSH_THEME="awesomepanda"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -25,6 +25,7 @@ plugins=(
     macos
     terraform
     aws
+    svn
     zsh-vi-mode
 )
 
@@ -32,19 +33,19 @@ bindkey -v
 function zvm_after_select_vi_mode() {
     case $ZVM_MODE in
         $ZVM_MODE_NORMAL)
-            VIMODE=""
+            VIMODE="󰍹"
             VICOLORS="blue"
             ;;
         $ZVM_MODE_INSERT)
-            VIMODE=""
+            VIMODE="󱋆"
             VICOLORS="green"
             ;;
         $ZVM_MODE_VISUAL)
-            VIMODE="濾"
+            VIMODE="󰹑"
             VICOLORS="red"
             ;;
         $ZVM_MODE_VISUAL_LINE)
-            VIMODE="礪"
+            VIMODE="󰍺"
             VICOLORS="red"
             ;;
     esac
@@ -123,5 +124,3 @@ alias "gb"="git branch"
 alias "gm"="git merge"
 alias "gmm"="git merge main"
 alias "ghpr"="gh pr create --web"
-
-. "$HOME/.local/bin/env"

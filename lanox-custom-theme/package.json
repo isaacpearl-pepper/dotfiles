@@ -1,0 +1,25 @@
+{
+	"name": "lanox-custom-theme",
+	"displayName": "Lanox Custom Theme",
+	"description": "A custom dark theme with vibrant syntax highlighting",
+	"version": "1.0.0",
+	"publisher": "local",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Lanox Custom",
+				"uiTheme": "vs-dark",
+				"path": "./themes/lanox-custom-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"size": 10043
+	}
+}
