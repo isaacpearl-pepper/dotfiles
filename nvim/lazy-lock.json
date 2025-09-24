@@ -12,6 +12,8 @@
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "nerdcommenter": { "branch": "master", "commit": "02a3b6455fa07b61b9440a78732f1e9b7876c991" },
   "nerdtree": { "branch": "master", "commit": "9b465acb2745beb988eff3c1e4aa75f349738230" },
+  "nvim-tree.lua": { "branch": "master", "commit": "321bc61580fd066b76861c32de3319c3a6d089e7" },
+  "nvim-web-devicons": { "branch": "master", "commit": "6e51ca170563330e063720449c21f43e27ca0bc1" },
   "snacks.nvim": { "branch": "main", "commit": "68da653d206069007f71d4373049193248bf913b" },
   "sql.vim": { "branch": "master", "commit": "1efe96e54fb0959e729d64ce9c2a552cb7dc9a41" },
   "vim-airline": { "branch": "master", "commit": "159573187e9996d06cf26e49a533f424f4d70b43" },

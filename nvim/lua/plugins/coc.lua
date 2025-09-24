@@ -15,7 +15,18 @@ return {
     keymap.set("n", "gy", "<Plug>(coc-type-definition)", opts)
     keymap.set("n", "gi", "<Plug>(coc-implementation)", opts)
     keymap.set("n", "gr", "<Plug>(coc-references)", opts)
-    keymap.set("n", "U", ":call <SID>show_documentation()<CR>", opts)
+    -- Function for documentation
+    function _G.show_documentation()
+      if vim.fn.index({'vim','help'}, vim.bo.filetype) >= 0 then
+        vim.cmd('h ' .. vim.fn.expand('<cword>'))
+      elseif vim.fn['coc#rpc#ready']() then
+        vim.fn.CocActionAsync('doHover')
+      else
+        vim.cmd('!' .. vim.o.keywordprg .. ' ' .. vim.fn.expand('<cword>'))
+      end
+    end
+
+    keymap.set("n", "U", ":lua show_documentation()<CR>", opts)
     keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", opts)
     keymap.set("v", "<leader>f", "<Plug>(coc-format-selected)", opts)
     keymap.set("n", "<leader>f", "<Plug>(coc-format-selected)", opts)

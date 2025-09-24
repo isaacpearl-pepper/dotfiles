@@ -105,13 +105,20 @@ function _G.SynStack()
   print(vim.inspect(names))
 end
 
-keymap.set("n", "<leader>sp", ":call <SID>SynStack()<CR>", opts)
+keymap.set("n", "<leader>sp", ":lua SynStack()<CR>", opts)
+
+-- if vim.fn.argc(-1) == 0 then
+--   vim.cmd("NvimTreeOpen")
+-- end
+--
+--
+keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
   -- Basic plugins that don't need configuration
   "jiangmiao/auto-pairs",
-  "adelarsq/vim-emoji-icon-theme",
+  -- "adelarsq/vim-emoji-icon-theme",
   "buoto/gotests-vim",
   "sheerun/vim-polyglot",
   "jparise/vim-graphql",
