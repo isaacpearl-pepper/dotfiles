@@ -23,6 +23,7 @@ Plug 'mileszs/ack.vim'
 Plug 'github/copilot.vim'
 Plug 'glacambre/firenvim'
 Plug 'wesQ3/vim-windowswap'
+Plug 'coder/claudecode.nvim'
 call plug#end()
 
 " Options
