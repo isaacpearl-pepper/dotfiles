@@ -6,7 +6,21 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("nvim-tree").setup {}
+    require("nvim-tree").setup {
+      on_attach = function(bufnr)
+        local api = require('nvim-tree.api')
+
+        local function opts(desc)
+          return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        -- Default mappings
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- Custom mapping for vertical split
+        vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: Vertical Split'))
+      end,
+    }
 
     -- Set custom highlight groups to match NERDTree colors from lanox_custom theme
     vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = "#ffffff" })
