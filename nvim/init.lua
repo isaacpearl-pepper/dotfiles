@@ -125,7 +125,6 @@ require("lazy").setup({
   "prettier/vim-prettier",
   "christoomey/vim-tmux-navigator",
   "dense-analysis/ale",
-  "github/copilot.vim",
   "glacambre/firenvim",
   "wesQ3/vim-windowswap",
 
