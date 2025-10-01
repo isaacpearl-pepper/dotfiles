@@ -7,6 +7,10 @@ return {
   },
   config = function()
     require("nvim-tree").setup {
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
 
