@@ -1,6 +1,6 @@
 return {
   "fatih/vim-go",
-  ft = "go",
+  ft = {"go", "gomod"},
   config = function()
     -- vim-go settings
     vim.g.go_highlight_types = 1
