@@ -9,6 +9,12 @@
             "command": "clangd",
             "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
             "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+        },
+        "python": {
+            "command": "pyright-langserver",
+            "args": ["--stdio"],
+            "filetypes": ["python"],
+            "rootPatterns": ["pyproject.toml", "setup.py", ".git/"]
         }
     }
 }
