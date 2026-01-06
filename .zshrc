@@ -125,3 +125,9 @@ alias "gmm"="git merge main"
 alias "ghpr"="gh pr create --web"
 
 . "$HOME/.local/bin/env"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# Add Go bin to PATH
+export PATH="$HOME/go/bin:$PATH"
