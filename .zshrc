@@ -124,3 +124,8 @@ alias "gb"="git branch"
 alias "gm"="git merge"
 alias "gmm"="git merge main"
 alias "ghpr"="gh pr create --web"
+ 
+export GOPATH=$HOME/go
+export GOROOT=/opt/homebrew/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
