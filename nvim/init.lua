@@ -8,6 +8,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
     lazypath,
+    de
   })
 end
 vim.opt.rtp:prepend(lazypath)

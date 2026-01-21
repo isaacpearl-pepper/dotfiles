@@ -13,7 +13,7 @@ export ZSH="/Users/ipearl/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="awesomepanda"
+ZSH_THEME="awesomepanda"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -25,6 +25,7 @@ plugins=(
     macos
     terraform
     aws
+    svn
     zsh-vi-mode
 )
 
@@ -94,13 +95,11 @@ fi
 autoload -U +X bashcompinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$HOME/bin/terraform:$PATH
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 complete -o nospace -C /opt/homebrew/Cellar/tfenv/2.2.3/versions/1.2.1/terraform terraform
 
@@ -123,11 +122,3 @@ alias "gb"="git branch"
 alias "gm"="git merge"
 alias "gmm"="git merge main"
 alias "ghpr"="gh pr create --web"
-
-. "$HOME/.local/bin/env"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-# Add Go bin to PATH
-export PATH="$HOME/go/bin:$PATH"
