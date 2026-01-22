@@ -135,6 +135,12 @@ require("lazy").setup({
       vim.g.sql_type_default = 'pqsql'
     end
   },
+  {
+    "sivchari/claude-code.nvim",
+    config = function()
+      require("claude-code").setup()
+    end
+  },
 
   -- Load plugins from separate files
   { import = "plugins" },
@@ -157,3 +163,4 @@ require("lazy").setup({
     },
   },
 })
+
