@@ -128,7 +128,6 @@ require("lazy").setup({
   "dense-analysis/ale",
   "glacambre/firenvim",
   "wesQ3/vim-windowswap",
-
   -- SQL settings
   {
     "vim-scripts/sql.vim",
