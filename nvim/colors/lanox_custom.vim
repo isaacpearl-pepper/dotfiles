@@ -179,3 +179,24 @@ hi NERDTreeDirSlash          ctermfg=246           ctermbg=NONE     cterm=NONE  
 "hi NERDTreeDir               ctermfg=87           ctermbg=NONE     cterm=NONE        guifg=#5fffff  guibg=NONE     gui=NONE
 "hi NERDTreeDirSlash          ctermfg=87           ctermbg=NONE     cterm=NONE        guifg=#5fffff  guibg=NONE     gui=NONE
 
+"---------------------------
+"- Treesitter              -
+"---------------------------
+hi @variable                 ctermfg=252   ctermbg=NONE  cterm=NONE    guifg=#D0D0D0  guibg=NONE  gui=NONE
+hi @variable.parameter       ctermfg=208   ctermbg=NONE  cterm=NONE    guifg=#FF8700  guibg=NONE  gui=NONE
+hi @function                 ctermfg=41    ctermbg=NONE  cterm=NONE    guifg=#2ecc71  guibg=NONE  gui=NONE
+hi @function.call            ctermfg=41    ctermbg=NONE  cterm=NONE    guifg=#2ecc71  guibg=NONE  gui=NONE
+hi @method                   ctermfg=41    ctermbg=NONE  cterm=NONE    guifg=#2ecc71  guibg=NONE  gui=NONE
+hi @method.call              ctermfg=41    ctermbg=NONE  cterm=NONE    guifg=#2ecc71  guibg=NONE  gui=NONE
+hi @keyword                  ctermfg=161   ctermbg=NONE  cterm=bold    guifg=#D7005F  guibg=NONE  gui=bold
+hi @keyword.import           ctermfg=161   ctermbg=NONE  cterm=bold    guifg=#D7005F  guibg=NONE  gui=bold
+hi @module                   ctermfg=81    ctermbg=NONE  cterm=NONE    guifg=#5FD7FF  guibg=NONE  gui=NONE
+hi @type                     ctermfg=81    ctermbg=NONE  cterm=NONE    guifg=#5fd7ff  guibg=NONE  gui=NONE
+hi @type.builtin             ctermfg=81    ctermbg=NONE  cterm=NONE    guifg=#5fd7ff  guibg=NONE  gui=NONE
+hi @constructor              ctermfg=81    ctermbg=NONE  cterm=NONE    guifg=#5fd7ff  guibg=NONE  gui=NONE
+hi @constant                 ctermfg=135   ctermbg=NONE  cterm=bold    guifg=#AF5FFF  guibg=NONE  gui=NONE
+hi @constant.builtin         ctermfg=135   ctermbg=NONE  cterm=NONE    guifg=#AF5FFF  guibg=NONE  gui=NONE
+hi @string                   ctermfg=220   ctermbg=NONE  cterm=NONE    guifg=#f1c40f  guibg=NONE  gui=NONE
+hi @attribute                ctermfg=118   ctermbg=NONE  cterm=NONE    guifg=#87FF00  guibg=NONE  gui=NONE
+hi @attribute.builtin        ctermfg=118   ctermbg=NONE  cterm=NONE    guifg=#87FF00  guibg=NONE  gui=NONE
+hi @decorator                ctermfg=118   ctermbg=NONE  cterm=NONE    guifg=#87FF00  guibg=NONE  gui=NONE

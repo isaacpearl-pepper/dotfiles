@@ -33,19 +33,19 @@ bindkey -v
 function zvm_after_select_vi_mode() {
     case $ZVM_MODE in
         $ZVM_MODE_NORMAL)
-            VIMODE=""
+            VIMODE="+"
             VICOLORS="blue"
             ;;
         $ZVM_MODE_INSERT)
-            VIMODE=""
+            VIMODE="+"
             VICOLORS="green"
             ;;
         $ZVM_MODE_VISUAL)
-            VIMODE="濾"
+            VIMODE="+"
             VICOLORS="red"
             ;;
         $ZVM_MODE_VISUAL_LINE)
-            VIMODE="礪"
+            VIMODE="+"
             VICOLORS="red"
             ;;
     esac
