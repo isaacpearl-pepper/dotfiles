@@ -1,16 +1,19 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = { "python", "lua", "javascript", "typescript", "go", "json", "yaml", "html", "css" },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true,
-      },
+    -- Setup nvim-treesitter (adds queries to runtimepath)
+    require("nvim-treesitter").setup({
+      install_dir = vim.fn.stdpath("data") .. "/site",
+    })
+
+    -- Enable treesitter highlighting for Python
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "python",
+      callback = function()
+        vim.treesitter.start()
+      end,
     })
   end,
 }

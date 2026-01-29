@@ -17,6 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
+-- Disable vim-polyglot for Python (let treesitter handle it)
+vim.g.polyglot_disabled = { "python" }
+
 -- Global Neovim configuration
 local opt = vim.opt
 local keymap = vim.keymap
