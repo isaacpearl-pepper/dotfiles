@@ -52,6 +52,22 @@ vim.cmd("colorscheme lanox_custom")
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
+-- LSP
+vim.lsp.config("pyright", {
+  cmd = { "pyright-langserver", "--stdio" },
+  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
+  filetypes = { "python" },
+})
+vim.lsp.enable("pyright")
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local opts = { buffer = args.buf }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.type_definition, opts)
+  end,
+})
+
 -- FZF
 opt.rtp:append("/opt/homebrew/opt/fzf")
 
