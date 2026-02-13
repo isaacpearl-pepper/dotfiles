@@ -57,14 +57,44 @@ vim.lsp.config("pyright", {
   cmd = { "pyright-langserver", "--stdio" },
   root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
   filetypes = { "python" },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "openFilesOnly",
+      },
+    },
+  },
 })
 vim.lsp.enable("pyright")
+
+local function lsp_jump(method)
+  return function()
+    local pos = vim.fn.getpos(".")
+    local from = { vim.fn.bufnr("%"), pos[2], pos[3], 0 }
+    vim.fn.settagstack(vim.fn.win_getid(), { items = { { tagname = vim.fn.expand("<cword>"), from = from } } }, "t")
+    method({
+      on_list = function(options)
+        if #options.items > 0 then
+          local item = options.items[1]
+          if item.filename then
+            vim.cmd("edit " .. vim.fn.fnameescape(item.filename))
+          end
+          if item.lnum then
+            vim.api.nvim_win_set_cursor(0, { item.lnum, (item.col or 1) - 1 })
+          end
+        end
+      end,
+    })
+  end
+end
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "gd", lsp_jump(vim.lsp.buf.definition), opts)
+    vim.keymap.set("n", "gi", lsp_jump(vim.lsp.buf.type_definition), opts)
   end,
 })
 
