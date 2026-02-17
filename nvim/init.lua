@@ -55,6 +55,8 @@ vim.cmd("colorscheme lanox_custom")
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
+vim.filetype.add({ pattern = { [".*%.sql~"] = "sql" } })
+
 -- LSP
 vim.lsp.config("basedpyright", {
   cmd = { "basedpyright-langserver", "--stdio" },
