@@ -20,6 +20,9 @@ vim.g.maplocalleader = "\\"
 -- Disable vim-polyglot for Python (let treesitter handle it)
 vim.g.polyglot_disabled = { "python" }
 
+-- Disable ALE for Python (basedpyright LSP handles diagnostics)
+vim.g.ale_linters_ignore = { python = { "pyright", "mypy" } }
+
 -- Global Neovim configuration
 local opt = vim.opt
 local keymap = vim.keymap
@@ -53,10 +56,17 @@ vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
 -- LSP
-vim.lsp.config("pyright", {
-  cmd = { "pyright-langserver", "--stdio" },
+vim.lsp.config("basedpyright", {
+  cmd = { "basedpyright-langserver", "--stdio" },
   root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
   filetypes = { "python" },
+  before_init = function(_, config)
+    local root = config.root_dir or vim.fn.getcwd()
+    local venv_python = root .. "/.venv/bin/python"
+    if vim.uv.fs_stat(venv_python) then
+      config.settings.python.pythonPath = venv_python
+    end
+  end,
   settings = {
     python = {
       analysis = {
@@ -67,7 +77,7 @@ vim.lsp.config("pyright", {
     },
   },
 })
-vim.lsp.enable("pyright")
+vim.lsp.enable("basedpyright")
 
 local function lsp_jump(method)
   return function()
