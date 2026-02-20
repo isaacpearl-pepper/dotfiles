@@ -109,6 +109,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- Tag stack forward with <C-q> (pair with <C-t> for back)
+vim.keymap.set("n", "<C-q>", ":tag<CR>", opts)
+
+-- gf with tag stack support so <C-t> works to go back
+vim.keymap.set("n", "gf", function()
+  local pos = vim.fn.getpos(".")
+  local from = { vim.fn.bufnr("%"), pos[2], pos[3], 0 }
+  vim.fn.settagstack(vim.fn.win_getid(), { items = { { tagname = vim.fn.expand("<cfile>"), from = from } } }, "t")
+  vim.cmd("normal! gf")
+end)
+
 -- FZF
 opt.rtp:append("/opt/homebrew/opt/fzf")
 
