@@ -21,7 +21,7 @@ vim.g.maplocalleader = "\\"
 vim.g.polyglot_disabled = { "python" }
 
 -- Disable ALE for Python (basedpyright LSP handles diagnostics)
-vim.g.ale_linters_ignore = { python = { "pyright", "mypy" } }
+vim.g.ale_linters_ignore = { python = { "pyright" } }
 
 -- Global Neovim configuration
 local opt = vim.opt
@@ -44,6 +44,7 @@ opt.tabstop = 4
 opt.expandtab = true
 opt.autoindent = true
 opt.hidden = true
+opt.autoread = true
 opt.completeopt = { "menuone", "noselect" }
 
 -- Colors and theme
@@ -54,8 +55,6 @@ vim.cmd("colorscheme lanox_custom")
 -- Enable filetype plugins
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
-
-vim.filetype.add({ pattern = { [".*%.sql~"] = "sql" } })
 
 -- LSP
 vim.lsp.config("basedpyright", {
@@ -133,27 +132,6 @@ keymap.set("i", "jk", "<Esc>", opts)
 keymap.set("n", "<C-p>", ":FZF<CR>", opts)
 keymap.set("n", "<C-b>", ":Buffers<CR>", opts)
 
--- Autocommands
-local numbertoggle = augroup('numbertoggle', { clear = true })
-
-autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
-  group = numbertoggle,
-  callback = function()
-    if vim.wo.number and vim.fn.mode() ~= 'i' then
-      vim.wo.relativenumber = true
-    end
-  end,
-})
-
-autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
-  group = numbertoggle,
-  callback = function()
-    if vim.wo.number then
-      vim.wo.relativenumber = false
-    end
-  end,
-})
-
 -- Global functions
 function _G.SynStack()
   if not vim.fn.exists('*synstack') then
@@ -225,3 +203,4 @@ require("lazy").setup({
   },
 })
 
+vim.filetype.add({ pattern = { [".*%.sql~"] = "sql" } })
