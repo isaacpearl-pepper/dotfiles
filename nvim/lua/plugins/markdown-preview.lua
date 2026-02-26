@@ -4,7 +4,7 @@ return {
   ft = { "markdown" },
   build = ":call mkdp#util#install()",
   config = function()
-    vim.g.mkdp_auto_close = 1
+    vim.g.mkdp_auto_close = 0
     vim.g.mkdp_theme = "light"
   end,
   keys = {
