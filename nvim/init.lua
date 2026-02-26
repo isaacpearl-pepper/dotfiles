@@ -45,6 +45,14 @@ opt.expandtab = true
 opt.autoindent = true
 opt.hidden = true
 opt.autoread = true
+vim.fn.timer_start(1000, function()
+  vim.cmd("checktime")
+end, { ["repeat"] = -1 })
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  callback = function()
+    vim.api.nvim_exec_autocmds("CursorHold", {})
+  end,
+})
 opt.completeopt = { "menuone", "noselect" }
 
 -- Colors and theme
