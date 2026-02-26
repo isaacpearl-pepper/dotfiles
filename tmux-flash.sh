@@ -1,11 +1,10 @@
 #!/bin/bash
 # Flash the tmux tab with animated spinner until user input or tab switch.
 
-pidfile="/tmp/claude-tmux-flash-${TMUX_PANE}.pid"
+win=${1:-$(tmux display-message -p -t "$TMUX_PANE" '#{window_id}')}
+pidfile="/tmp/claude-tmux-flash-${win}.pid"
 [ -f "$pidfile" ] && kill "$(cat "$pidfile")" 2>/dev/null
 echo $$ > "$pidfile"
-
-win=$(tmux display-message -p -t "$TMUX_PANE" '#{window_id}')
 start=$(tmux display-message -p '#{client_activity}')
 
 frames=("󰝥" "󰻃" "󱥸")
