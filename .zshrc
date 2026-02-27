@@ -126,3 +126,6 @@ alias "gmm"="git merge main"
 alias "gmma"="git merge master"
 alias "ghpr"="gh pr create --web"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Wrap claude so tmux dot clears on exit (Ctrl+C, Ctrl+D, or normal quit)
+claude() { command claude "$@"; ~/dotfiles/tmux-agent-state.sh clear 2>/dev/null; }
