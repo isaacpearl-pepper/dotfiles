@@ -46,7 +46,7 @@ render_window_icons() {
     case "$state" in
       thinking)    icons+="#[fg=#D77757,bold]●" ;;
       needs_input) icons+="#[fg=#ffcc00,bold]●" ;;
-      done)        icons+="#[fg=#00ff00,bold]●" ;;
+      done)        icons+="#[fg=#2ecc71,bold]●" ;;
     esac
   done < <(tmux list-panes -t "$win" -F '#{pane_id}')
 
